@@ -179,7 +179,7 @@ class Bbs extends CI_Controller
                     $this->load->view('admin_delete_view', $data);
                 } else {
                     $_SESSION['error_message'][] = '存在しないレコードです。';
-                    header('location: http://localhost/CodeIgniterkeiziban/bbs/admin');
+                    header('location: /CodeIgniterkeiziban/bbs/admin');
                     exit();
                 }
             } else {
@@ -188,7 +188,7 @@ class Bbs extends CI_Controller
                 exit();
             }
         } else {
-            header('location: http://localhost/CodeIgniterkeiziban/bbs/login');
+            header('location: /CodeIgniterkeiziban/bbs/login');
             exit();
         }
     }
@@ -206,16 +206,16 @@ class Bbs extends CI_Controller
             $id = $this->input->post('message_id', true);
             if ($this->Bbs_model->delete_row($id)) {
                 $_SESSION['success_message'] = 'メッセージを削除しました。';
-                header('location: http://localhost/CodeIgniterkeiziban/bbs/admin');
+                header('location: /CodeIgniterkeiziban/bbs/admin');
                 exit();
             } else {
                 $_SESSION['error_message'][] = '削除に失敗しました。';
-                header("location: http://localhost/CodeIgniterkeiziban/bbs/delete?message_id={$id}");
+                header("location: /CodeIgniterkeiziban/bbs/delete?message_id={$id}");
                 exit();
             }
         } else {
             $_SESSION['error_message'][] = '削除に必要なパラメータが含まれていません';
-            header('location: http://localhost/CodeIgniterkeiziban/bbs/admin');
+            header('location: /CodeIgniterkeiziban/bbs/admin');
             exit();
         }
     }
@@ -248,18 +248,18 @@ class Bbs extends CI_Controller
                 ];
                 if ($this->Bbs_model->update_row($id, $data)) {
                     $_SESSION['success_message'] = 'メッセージを更新しました。';
-                    header('location: http://localhost/CodeIgniterkeiziban/bbs/admin');
+                    header('location: /CodeIgniterkeiziban/bbs/admin');
                 } else {
                     $_SESSION['error_message'][] = '更新に失敗しました。';
-                    header("location: http://localhost/CodeIgniterkeiziban/bbs/edit?message_id={$id}");
+                    header("location: /CodeIgniterkeiziban/bbs/edit?message_id={$id}");
                 }
             } else {
                 $_SESSION['error_message'] = $error_message;
-                header("location: http://localhost/CodeIgniterkeiziban/bbs/edit?message_id={$id}");
+                header("location: /CodeIgniterkeiziban/bbs/edit?message_id={$id}");
             }
         } else {
             $_SESSION['error_message'][] = '更新に必要なパラメータが含まれていません';
-            header('location: http://localhost/CodeIgniterkeiziban/bbs/admin');
+            header('location: /CodeIgniterkeiziban/bbs/admin');
         }
         exit();
     }

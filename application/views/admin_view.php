@@ -14,7 +14,7 @@
     <?php endif; ?>
     <section>
         <div class="form-wrapper" style="display: flex;">
-            <form method="get" action="http://localhost/CodeIgniterkeiziban/bbs/download_csv">
+            <form method="get" action="/CodeIgniterkeiziban/bbs/download_csv">
                 <select name="limit">
                     <option value="">全て</option>
                     <option value="10">10件</option>
@@ -23,7 +23,7 @@
                 <input type="submit" name="btn_download" value="csvダウンロード">
             </form>
             <div style="margin-left: auto;">
-                <form method="get" action="http://localhost/CodeIgniterkeiziban/bbs/logout">
+                <form method="get" action="/CodeIgniterkeiziban/bbs/logout">
                     <input type="submit" name="btn_logout" value="ログアウト">
                 </form>
             </div>
@@ -39,11 +39,11 @@
                         <?php echo date('Y年m月d日 H:i', strtotime($value['post_date'])); ?>
                     </time>
                     <p>
-                        <a href="http://localhost/CodeIgniterkeiziban/bbs/edit?message_id=<?php echo $value['id']; ?>">
+                        <a href="/CodeIgniterkeiziban/bbs/edit?message_id=<?php echo $value['id']; ?>">
                             編集
                         </a>
                         &nbsp;&nbsp;
-                        <a href="http://localhost/CodeIgniterkeiziban/bbs/delete?message_id=<?php echo $value['id']; ?>">
+                        <a href="/CodeIgniterkeiziban/bbs/delete?message_id=<?php echo $value['id']; ?>">
                             削除
                         </a>
                     </p>
